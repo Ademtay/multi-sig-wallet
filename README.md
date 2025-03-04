@@ -1,34 +1,53 @@
-Smart Contract (contracts/MultiSigWallet.sol):
-Implements a multi-signature wallet with multiple owners
-Allows submitting, confirming, and executing transactions
-Requires a specified number of confirmations for execution
-Includes security features like reentrancy protection
-Deployment Script (scripts/deploy.js):
-Deploys the contract with specified owners and required confirmations
-Can be customized for different networks
-Tests (test/MultiSigWallet.test.js):
-Tests contract deployment
-Tests transaction submission, confirmation, and execution
-Verifies owner management
-Frontend (frontend/):
-React application for interacting with the contract
-Features:
-Wallet connection
-View owners
-Submit new transactions
-Confirm transactions
-Execute transactions
-View transaction history
-Modern UI with responsive design
-To get started with the project:
-Install dependencies:
-Compile and deploy the contract:
-Update the CONTRACT_ADDRESS in frontend/src/App.js with your deployed contract address.
-Start the frontend:
-The multi-signature wallet is now ready to use! Users can:
-Connect their Web3 wallet
-View all owners of the multi-sig wallet
-Submit new transactions
-Confirm transactions (if they are an owner)
-Execute transactions once enough confirmations are received
-View the transaction history
+# Multi-Signature Wallet
+
+A secure multi-signature wallet implementation on Ethereum blockchain that requires multiple owners to approve transactions before execution.
+
+## Features
+
+- Create a multi-signature wallet with multiple owners
+- Set required number of approvals for transactions
+- Submit transactions for approval
+- Approve/reject transactions
+- Execute approved transactions
+- View transaction history
+- Add/remove owners (with required approvals)
+
+## Project Structure
+
+```
+├── contracts/           # Smart contracts
+├── frontend/           # React frontend application
+├── scripts/            # Deployment and testing scripts
+└── test/              # Test files
+```
+
+## Setup Instructions
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Compile contracts:
+```bash
+npx hardhat compile
+```
+
+3. Deploy contracts:
+```bash
+npx hardhat run scripts/deploy.js --network <network>
+```
+
+4. Start frontend:
+```bash
+cd frontend
+npm start
+```
+
+## Technologies Used
+
+- Solidity
+- Hardhat
+- React
+- Web3.js
+- Ethers.js 
